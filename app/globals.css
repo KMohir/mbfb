@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f8fafc] text-slate-800 antialiased font-sans;
+  }
+}
+
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 35s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.card-zoom {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-zoom:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.12);
+  border-color: #0f766e;
+}
+.card-zoom:hover .img-hover {
+  transform: scale(1.04);
+}
+.img-hover {
+  transition: transform 0.5s ease;
+}
