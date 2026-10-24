@@ -41,9 +41,9 @@ export default function Home() {
                 <span>{t("hero_pill")}</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
-                <span className={`block ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("hero_title_1")}</span>
-                <span className={`block mt-1 text-transparent bg-clip-text bg-gradient-to-r ${
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.2] pb-2 overflow-visible">
+                <span className={`block pb-1 ${isDark ? "text-slate-100" : "text-slate-900"}`}>{t("hero_title_1")}</span>
+                <span className={`block mt-1 pb-3 text-transparent bg-clip-text bg-gradient-to-r leading-[1.25] overflow-visible ${
                   isDark ? "from-white via-slate-200 to-emerald-400" : "from-slate-900 via-[#0f766e] to-[#0284c7]"
                 }`}>
                   {t("hero_title_2")}
