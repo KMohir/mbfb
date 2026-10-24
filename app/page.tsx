@@ -132,11 +132,10 @@ export default function Home() {
                     : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900"
                 }`}>
                   <div className="relative w-full aspect-[16/11] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 p-2 flex items-center justify-center">
-                    <Image
+                    <img
                       src={isDark ? "/images/hero_building_night.webp" : "/images/hero_building_day.webp"}
                       alt="MBFB Bosh Binosi"
-                      fill
-                      className="object-contain"
+                      className="w-full h-full object-contain"
                     />
                     <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-slate-900/80 text-white backdrop-blur-md border border-white/15">
                       {lang === "uz" ? "Toshkent, Navoiy 30" : "Ташкент, Навои 30"}

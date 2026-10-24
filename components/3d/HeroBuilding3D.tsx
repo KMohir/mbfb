@@ -164,33 +164,29 @@ export default function HeroBuilding3D() {
       <div className="absolute inset-0 flex items-center justify-center p-2 sm:p-4 z-10 transition-opacity duration-700">
         {/* Night Model */}
         <div
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-700 ${
+          className={`absolute inset-0 flex items-center justify-center p-2 transition-opacity duration-700 ${
             isNight ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
           }`}
         >
-          <Image
+          <img
             src="/images/hero_building_night.webp"
             alt="MBFB 3D Digital Twin Night"
-            fill
-            priority
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-contain filter drop-shadow-[0_15px_35px_rgba(0,0,0,0.8)]"
+            className="w-full h-full object-contain filter drop-shadow-[0_15px_35px_rgba(0,0,0,0.8)] select-none"
+            draggable={false}
           />
         </div>
 
         {/* Day Model */}
         <div
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-700 ${
+          className={`absolute inset-0 flex items-center justify-center p-2 transition-opacity duration-700 ${
             !isNight ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
           }`}
         >
-          <Image
+          <img
             src="/images/hero_building_day.webp"
             alt="MBFB 3D Digital Twin Day"
-            fill
-            priority
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-contain filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)]"
+            className="w-full h-full object-contain filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)] select-none"
+            draggable={false}
           />
         </div>
       </div>
