@@ -287,9 +287,9 @@ export default function InteractiveBuildingViewer() {
                 transformStyle: "preserve-3d",
               }}
             >
-              {/* Seamless Building Graphic (Transparent PNG - Zero White Border) */}
+              {/* Seamless Building Graphic (Transparent WebP - Ultra Fast & Crisp) */}
               <img
-                src="/images/hero_building_transparent.png"
+                src="/images/hero_building_transparent.webp"
                 alt="MBFB 3D Digital Twin"
                 className={`max-h-[340px] sm:max-h-[370px] w-auto object-contain transition-all duration-500 select-none ${
                   isDark

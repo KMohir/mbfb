@@ -74,7 +74,7 @@ export default function CentralOfficePage() {
         <div className="mb-12 bg-white dark:bg-[#0f172a] rounded-3xl border border-slate-200 dark:border-white/10 p-6 sm:p-8 flex flex-col lg:flex-row items-center gap-8 shadow-sm">
           <div className="w-full lg:w-1/3 aspect-[16/11] bg-gradient-to-b from-slate-100 to-slate-200 dark:from-slate-900 dark:to-[#070b12] rounded-2xl p-4 flex items-center justify-center">
             <Image
-              src="/images/hero_isometric_3d.jpg"
+              src="/images/hero_isometric_3d.webp"
               alt="MBFB Central Complex"
               width={400}
               height={280}

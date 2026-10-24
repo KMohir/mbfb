@@ -133,7 +133,7 @@ export default function Home() {
                 }`}>
                   <div className="relative w-full aspect-[16/11] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 p-2 flex items-center justify-center">
                     <Image
-                      src={isDark ? "/images/hero_building_night.jpg" : "/images/hero_building_day.jpg"}
+                      src={isDark ? "/images/hero_building_night.webp" : "/images/hero_building_day.webp"}
                       alt="MBFB Bosh Binosi"
                       fill
                       className="object-contain"
@@ -220,7 +220,7 @@ export default function Home() {
                 isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40"
               }`}>
                 <div className={`aspect-[16/11] overflow-hidden relative flex items-center justify-center ${isDark ? "bg-slate-900/60" : "bg-slate-100/60"}`}>
-                  <img src="/images/3d_smart_building.png" alt="Binolarni saqlash" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
+                  <img src="/images/3d_smart_building.webp" alt="Binolarni saqlash" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
                   <span className="absolute top-3 left-3 bg-[#0f766e] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">01</span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
@@ -244,7 +244,7 @@ export default function Home() {
                 isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40"
               }`}>
                 <div className={`aspect-[16/11] overflow-hidden relative flex items-center justify-center ${isDark ? "bg-slate-900/60" : "bg-slate-100/60"}`}>
-                  <img src="/images/3d_renovation_tools.png" alt="Ta'mirlash ishlari" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
+                  <img src="/images/3d_renovation_tools.webp" alt="Ta'mirlash ishlari" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
                   <span className="absolute top-3 left-3 bg-[#0f766e] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">02</span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
@@ -268,7 +268,7 @@ export default function Home() {
                 isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40"
               }`}>
                 <div className={`aspect-[16/11] overflow-hidden relative flex items-center justify-center ${isDark ? "bg-slate-900/60" : "bg-slate-100/60"}`}>
-                  <img src="/images/3d_hvac_turbine.png" alt="Muhandislik tarmoqlari" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
+                  <img src="/images/3d_hvac_turbine.webp" alt="Muhandislik tarmoqlari" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
                   <span className="absolute top-3 left-3 bg-[#0f766e] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">03</span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
@@ -292,7 +292,7 @@ export default function Home() {
                 isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40"
               }`}>
                 <div className={`aspect-[16/11] overflow-hidden relative flex items-center justify-center ${isDark ? "bg-slate-900/60" : "bg-slate-100/60"}`}>
-                  <img src="/images/3d_security_shield.png" alt="Kommunal xizmatlar va xavfsizlik" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
+                  <img src="/images/3d_security_shield.webp" alt="Kommunal xizmatlar va xavfsizlik" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
                   <span className="absolute top-3 left-3 bg-[#0f766e] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">04</span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
@@ -316,7 +316,7 @@ export default function Home() {
                 isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40"
               }`}>
                 <div className={`aspect-[16/11] overflow-hidden relative flex items-center justify-center ${isDark ? "bg-slate-900/60" : "bg-slate-100/60"}`}>
-                  <img src="/images/3d_executive_chair.png" alt="Xonalarni ijaraga berish" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
+                  <img src="/images/3d_executive_chair.webp" alt="Xonalarni ijaraga berish" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
                   <span className="absolute top-3 left-3 bg-[#0f766e] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">05</span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
@@ -340,7 +340,7 @@ export default function Home() {
                 isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40"
               }`}>
                 <div className={`aspect-[16/11] overflow-hidden relative flex items-center justify-center ${isDark ? "bg-slate-900/60" : "bg-slate-100/60"}`}>
-                  <img src="/images/3d_vault_cube.png" alt="Davlat mulkidan foydalanish" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
+                  <img src="/images/3d_vault_cube.webp" alt="Davlat mulkidan foydalanish" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
                   <span className="absolute top-3 left-3 bg-[#0f766e] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">06</span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">

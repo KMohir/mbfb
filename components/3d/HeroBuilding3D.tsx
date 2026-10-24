@@ -169,7 +169,7 @@ export default function HeroBuilding3D() {
           }`}
         >
           <Image
-            src="/images/hero_building_night.jpg"
+            src="/images/hero_building_night.webp"
             alt="MBFB 3D Digital Twin Night"
             fill
             priority
@@ -185,7 +185,7 @@ export default function HeroBuilding3D() {
           }`}
         >
           <Image
-            src="/images/hero_building_day.jpg"
+            src="/images/hero_building_day.webp"
             alt="MBFB 3D Digital Twin Day"
             fill
             priority
