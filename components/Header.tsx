@@ -21,12 +21,12 @@ export default function Header() {
           : "bg-white/80 border-slate-200/80 text-slate-800 shadow-sm"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
         
         {/* LOGO */}
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group min-w-0">
           <div
-            className={`w-12 h-12 rounded-xl flex items-center justify-center p-2.5 border shadow-sm transition-all shrink-0 ${
+            className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center p-2 sm:p-2.5 border shadow-sm transition-all shrink-0 ${
               isDark
                 ? "bg-white/10 text-white border-white/15 group-hover:bg-[#0f766e] group-hover:border-emerald-400/40"
                 : "bg-slate-900 text-white border-slate-900 group-hover:bg-[#0f766e]"
@@ -34,16 +34,16 @@ export default function Header() {
           >
             <Building2 className={`w-full h-full ${isDark ? "text-emerald-400 group-hover:text-white" : "text-emerald-400"}`} />
           </div>
-          <div>
+          <div className="min-w-0">
             <span
-              className={`block font-black text-lg tracking-tight leading-tight ${
+              className={`block font-black text-base sm:text-lg tracking-tight leading-tight ${
                 isDark ? "text-white" : "text-slate-900"
               }`}
             >
               {t("site_title")}
             </span>
             <span
-              className={`block text-[11px] font-medium leading-tight max-w-[240px] ${
+              className={`block text-[10px] sm:text-[11px] font-medium leading-tight max-w-[200px] sm:max-w-[280px] truncate ${
                 isDark ? "text-slate-400" : "text-slate-500"
               }`}
             >
@@ -301,10 +301,10 @@ export default function Header() {
         </nav>
 
         {/* CTA BUTTON & MOBILE MENU TOGGLE */}
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2 shrink-0">
           <Link
             href="/contact/details"
-            className="inline-flex items-center gap-2 bg-[#0f766e] hover:bg-[#115e59] text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md hover:shadow-emerald-900/50 transition-all hover:scale-[1.02]"
+            className="hidden sm:inline-flex items-center gap-2 bg-[#0f766e] hover:bg-[#115e59] text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md hover:shadow-emerald-900/50 transition-all hover:scale-[1.02]"
           >
             <Send className="w-4 h-4" />
             <span>{t("btn_send_request")}</span>
@@ -313,6 +313,7 @@ export default function Header() {
           {/* Mobile menu toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Menu"
             className={`xl:hidden w-10 h-10 rounded-xl flex items-center justify-center transition-colors border ${
               isDark
                 ? "bg-white/10 hover:bg-white/20 text-white border-white/15"
@@ -327,10 +328,21 @@ export default function Header() {
       {/* MOBILE MENU */}
       {mobileOpen && (
         <div
-          className={`xl:hidden border-b px-4 pt-2 pb-6 space-y-3 ${
+          className={`xl:hidden border-b px-4 pt-3 pb-6 space-y-3 ${
             isDark ? "bg-[#090d16] border-white/10 text-slate-200" : "bg-white border-slate-200 text-slate-800"
           }`}
         >
+          {/* Mobile CTA inside menu */}
+          <div className="sm:hidden pb-1">
+            <Link
+              href="/contact/details"
+              onClick={() => setMobileOpen(false)}
+              className="w-full flex items-center justify-center gap-2 bg-[#0f766e] hover:bg-[#115e59] text-white text-xs font-bold py-2.5 rounded-xl shadow-md transition-all"
+            >
+              <Send className="w-4 h-4" />
+              <span>{t("btn_send_request")}</span>
+            </Link>
+          </div>
           <Link
             href="/"
             onClick={() => setMobileOpen(false)}
