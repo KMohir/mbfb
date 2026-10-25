@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Building2, ChevronDown, Menu, X, Send, Sun, Moon } from "lucide-react";
+import { Building2, ChevronDown, Menu, X, Send } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useTheme } from "@/lib/ThemeContext";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { t } = useLanguage();
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   const isDark = theme === "dark";
 
@@ -300,22 +300,8 @@ export default function Header() {
           </div>
         </nav>
 
-        {/* CTA BUTTON & THEME TOGGLE */}
+        {/* CTA BUTTON & MOBILE MENU TOGGLE */}
         <div className="flex items-center gap-2.5">
-          
-          {/* Quick Theme Toggle Button in Header */}
-          <button
-            onClick={toggleTheme}
-            className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all cursor-pointer border ${
-              isDark
-                ? "bg-white/10 hover:bg-white/20 text-amber-300 border-white/15"
-                : "bg-slate-100 hover:bg-slate-200 text-indigo-600 border-slate-300"
-            }`}
-            title={isDark ? "Kunduzgi (yorug') rejim" : "Tungi (qorong'i) rejim"}
-          >
-            {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-600" />}
-          </button>
-
           <Link
             href="/contact/details"
             className="inline-flex items-center gap-2 bg-[#0f766e] hover:bg-[#115e59] text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md hover:shadow-emerald-900/50 transition-all hover:scale-[1.02]"

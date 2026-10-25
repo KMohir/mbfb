@@ -315,32 +315,13 @@ export default function HeroBuilding3D() {
         }`}
       >
         <div className="flex items-center gap-2">
-          {/* Day / Night Toggle */}
-          <button
-            onClick={() => setTimeMode(timeMode === "day" ? "night" : "day")}
-            className={`px-3 py-1.5 rounded-xl font-medium flex items-center gap-1.5 transition-all cursor-pointer ${
-              isNight
-                ? "bg-white/10 hover:bg-white/20 text-white"
-                : "bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200"
-            }`}
-          >
-            {timeMode === "day" ? (
-              <>
-                <Sun className="w-3.5 h-3.5 text-amber-500" />
-                <span>{lang === "uz" ? "Kunduzgi rejim" : "Дневной режим"}</span>
-              </>
-            ) : (
-              <>
-                <Moon className="w-3.5 h-3.5 text-indigo-400" />
-                <span>{lang === "uz" ? "Oqshom / Tungi" : "Ночной режим"}</span>
-              </>
-            )}
-          </button>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-semibold text-[11px]">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>{lang === "uz" ? "3D Bino Modeli" : "3D Модель Здания"}</span>
+          </div>
 
-          {/* Hotspot Toggle Hint */}
-          <span className="hidden md:inline-flex items-center gap-1 text-[11px] opacity-70">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span>{lang === "uz" ? "Datchiklarni bosing" : "Кликайте по датчикам"}</span>
+          <span className="text-[11px] opacity-75">
+            {lang === "uz" ? "Datchiklarni tanlab ko'ring" : "Кликайте по датчикам"}
           </span>
         </div>
 
