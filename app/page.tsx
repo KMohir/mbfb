@@ -131,13 +131,13 @@ export default function Home() {
                     ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white"
                     : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900"
                 }`}>
-                  <div className="relative w-full aspect-[16/11] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 p-2 flex items-center justify-center">
+                  <div className="relative w-full aspect-[16/11] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 flex items-center justify-center">
                     <img
-                      src={isDark ? "/images/hero_building_night.webp" : "/images/hero_building_day.webp"}
+                      src="/images/admin_building_hero.webp"
                       alt="MBFB Bosh Binosi"
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
-                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-slate-900/80 text-white backdrop-blur-md border border-white/15">
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-slate-900/80 text-white backdrop-blur-md border border-white/15 shadow-sm">
                       {lang === "uz" ? "Toshkent, Navoiy 30" : "Ташкент, Навои 30"}
                     </div>
                   </div>

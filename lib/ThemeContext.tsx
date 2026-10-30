@@ -12,14 +12,14 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: "dark",
+  theme: "light",
   setTheme: () => {},
   toggleTheme: () => {},
   isMounted: false,
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark");
+  const [theme, setThemeState] = useState<Theme>("light");
   const [isMounted, setIsMounted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -29,14 +29,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         setThemeState(saved);
         applyThemeClass(saved);
       } else {
-        // Default to dark for high-tech digital twin look, or respect system
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const initial = prefersDark ? "dark" : "light";
-        setThemeState(initial);
-        applyThemeClass(initial);
+        // Default to light (Kunduzgi) by user requirement
+        setThemeState("light");
+        applyThemeClass("light");
       }
     } catch {
-      applyThemeClass("dark");
+      applyThemeClass("light");
     }
     setIsMounted(true);
   }, []);

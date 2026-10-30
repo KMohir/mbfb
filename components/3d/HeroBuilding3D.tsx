@@ -89,7 +89,7 @@ export default function HeroBuilding3D() {
   const { lang } = useLanguage();
   const { theme } = useTheme();
 
-  const [timeMode, setTimeMode] = useState<"day" | "night">(theme === "dark" ? "night" : "day");
+  const [timeMode, setTimeMode] = useState<"day" | "night">("day");
   const [activeHotspot, setActiveHotspot] = useState<Hotspot | null>(null);
   const [isRotating, setIsRotating] = useState<boolean>(true);
 
