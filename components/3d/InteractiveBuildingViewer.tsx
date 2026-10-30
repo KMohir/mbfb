@@ -42,6 +42,7 @@ interface ServicePillar {
   yPercent: number; // Vertical position on building
   hPercent: number; // Height bracket
   tagBadge: string;
+  image: string;
 }
 
 const pillars: ServicePillar[] = [
@@ -70,6 +71,7 @@ const pillars: ServicePillar[] = [
     yPercent: 14,
     hPercent: 18,
     tagBadge: "Saqlash • Muhandislik",
+    image: "/images/mbfb_task_1_building.webp",
   },
   {
     id: 2,
@@ -96,6 +98,7 @@ const pillars: ServicePillar[] = [
     yPercent: 34,
     hPercent: 18,
     tagBadge: "Xizmat • 24/7 Dispetcher",
+    image: "/images/mbfb_task_3_engineering.webp",
   },
   {
     id: 3,
@@ -122,6 +125,7 @@ const pillars: ServicePillar[] = [
     yPercent: 54,
     hPercent: 18,
     tagBadge: "G'amxo'rlik • Klining",
+    image: "/images/mbfb_pillar_care.webp",
   },
   {
     id: 4,
@@ -148,11 +152,13 @@ const pillars: ServicePillar[] = [
     yPercent: 74,
     hPercent: 18,
     tagBadge: "Tartib • Xavfsizlik",
+    image: "/images/mbfb_task_4_security.webp",
   },
 ];
 
 export default function InteractiveBuildingViewer() {
   const [selectedPillar, setSelectedPillar] = useState<number>(3); // Default to Kundalik g'amxo'rlik
+  const [viewMode, setViewMode] = useState<"photo" | "3d">("photo");
   const { lang } = useLanguage();
   const { theme } = useTheme();
   const isDark = theme === "dark";
@@ -226,146 +232,119 @@ export default function InteractiveBuildingViewer() {
         {/* 3D Inspector Grid */}
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           
-          {/* Left Column: Interactive 3D Digital Twin with Facility Care Slices */}
+          {/* Left Column: Interactive Facility Visual (Photorealistic Service or 3D Model) */}
           <div
             ref={cardRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className={`lg:col-span-7 relative h-[380px] sm:h-[450px] rounded-3xl overflow-hidden border p-6 flex items-center justify-center transition-all duration-300 shadow-2xl group ${
+            className={`lg:col-span-7 relative h-[400px] sm:h-[460px] rounded-3xl overflow-hidden border transition-all duration-300 shadow-2xl group ${
               isDark
-                ? "bg-gradient-to-b from-[#0a1420] via-[#070e17] to-[#040810] border-emerald-500/25 shadow-emerald-950/40"
-                : "bg-gradient-to-b from-white via-slate-50 to-slate-100/90 border-slate-200/90 shadow-slate-200/60"
+                ? "bg-[#070e17] border-white/10 shadow-black/60"
+                : "bg-slate-900 border-slate-200 shadow-slate-300/60"
             }`}
-            style={{
-              perspective: "1000px",
-            }}
           >
-            {/* Background CAD Isometric Grid & Crosshairs */}
-            <div
-              className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${
-                isDark ? "opacity-25" : "opacity-40"
-              }`}
-              style={{
-                backgroundImage: isDark
-                  ? "radial-gradient(circle at center, rgba(16, 185, 129, 0.12) 0%, transparent 70%), linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px)"
-                  : "radial-gradient(circle at center, rgba(16, 185, 129, 0.10) 0%, transparent 70%), linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px)",
-                backgroundSize: "100% 100%, 32px 32px, 32px 32px",
-              }}
-            />
-
-            {/* Top Bar HUD */}
-            <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
-              <div
-                className={`flex items-center gap-2 px-3 py-1.5 rounded-xl backdrop-blur-md text-xs font-mono border shadow-sm ${
-                  isDark
-                    ? "bg-[#0b1723]/80 border-emerald-500/30 text-emerald-300"
-                    : "bg-white/90 border-slate-200 text-emerald-800"
-                }`}
-              >
-                <Activity className="w-3.5 h-3.5 text-emerald-500 animate-pulse" />
-                <span>
-                  {lang === "uz" ? "FAOL YO'NALISH:" : "АКТИВНОЕ НАПРАВЛЕНИЕ:"} {lang === "uz" ? current.badgeUz : current.badgeRu}
-                </span>
+            {/* Top Bar Switcher & Status HUD */}
+            <div className="absolute top-4 left-4 right-4 z-30 flex items-center justify-between gap-2">
+              <div className="flex items-center gap-1 bg-black/60 backdrop-blur-md p-1 rounded-full border border-white/15 text-xs shadow-lg">
+                <button
+                  onClick={() => setViewMode("photo")}
+                  className={`px-3 py-1 rounded-full font-bold transition-all ${
+                    viewMode === "photo"
+                      ? "bg-[#00c988] text-white shadow-sm"
+                      : "text-slate-300 hover:text-white"
+                  }`}
+                >
+                  {lang === "uz" ? "Xizmat Jarayoni (Foto)" : "Процесс (Фото)"}
+                </button>
+                <button
+                  onClick={() => setViewMode("3d")}
+                  className={`px-3 py-1 rounded-full font-bold transition-all ${
+                    viewMode === "3d"
+                      ? "bg-[#00c988] text-white shadow-sm"
+                      : "text-slate-300 hover:text-white"
+                  }`}
+                >
+                  {lang === "uz" ? "3D Sxema" : "3D Схема"}
+                </button>
               </div>
 
               <div
-                className={`px-3 py-1 rounded-xl text-[11px] font-mono border backdrop-blur-md ${
-                  isDark
-                    ? "bg-black/40 border-white/10 text-slate-400"
-                    : "bg-slate-100/90 border-slate-200 text-slate-600"
-                }`}
+                className="px-3 py-1 rounded-full text-[11px] font-mono border backdrop-blur-md flex items-center gap-1.5 shadow-sm bg-black/60 border-white/15 text-[#00c988]"
               >
-                MBFB BMS v4.2
+                <Activity className="w-3.5 h-3.5 animate-pulse" />
+                <span>MBFB BMS v4.2</span>
               </div>
             </div>
 
-            {/* 3D Model Layer with Smooth Mouse Parallax */}
-            <div
-              className="relative w-full h-full max-h-[380px] flex items-center justify-center transition-transform duration-200 ease-out"
-              style={{
-                transform: `rotateY(${tilt.x}deg) rotateX(${tilt.y}deg)`,
-                transformStyle: "preserve-3d",
-              }}
-            >
-              {/* Seamless Building Graphic (Transparent WebP - Ultra Fast & Crisp) */}
-              <img
-                src="/images/hero_building_transparent.webp"
-                alt="MBFB 3D Digital Twin"
-                className={`max-h-[340px] sm:max-h-[370px] w-auto object-contain transition-all duration-500 select-none ${
-                  isDark
-                    ? "filter drop-shadow-[0_20px_40px_rgba(16,185,129,0.25)] brightness-105"
-                    : "filter drop-shadow-[0_20px_35px_rgba(15,23,42,0.18)]"
-                }`}
-                draggable={false}
-              />
+            {/* Main Visual Display */}
+            {viewMode === "photo" ? (
+              <div className="relative w-full h-full overflow-hidden">
+                <img
+                  key={current.id}
+                  src={current.image}
+                  alt={lang === "uz" ? current.titleUz : current.titleRu}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
 
-              {/* Holographic Active Floor/Service Slice Highlight Bracket */}
+                {/* Bottom Overlay Card */}
+                <div className="absolute bottom-4 left-4 right-4 z-20 backdrop-blur-md bg-black/65 border border-white/15 p-3.5 rounded-2xl flex items-center justify-between gap-3 text-white">
+                  <div className="min-w-0">
+                    <span className="text-[11px] font-bold text-[#00c988] uppercase tracking-wider block">
+                      📍 {lang === "uz" ? current.zoneUz : current.zoneRu}
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-slate-100 truncate block mt-0.5">
+                      {lang === "uz" ? current.statusUz : current.statusRu}
+                    </span>
+                  </div>
+                  <div className="shrink-0 pl-3 border-l border-white/20 text-right">
+                    <span className="text-[10px] text-slate-300 block">{lang === "uz" ? current.metric1LabelUz : current.metric1LabelRu}</span>
+                    <span className="text-xs sm:text-sm font-mono font-bold text-[#00c988]">{current.metric1Value}</span>
+                  </div>
+                </div>
+              </div>
+            ) : (
               <div
-                className="absolute left-[18%] right-[18%] transition-all duration-500 pointer-events-none rounded-xl border-2 flex items-center justify-between px-3"
+                className="relative w-full h-full flex items-center justify-center transition-transform duration-200 ease-out"
                 style={{
-                  top: `${current.yPercent}%`,
-                  height: `${current.hPercent}%`,
-                  borderColor: isDark ? "#10b981" : "#0d9488",
-                  backgroundColor: isDark
-                    ? "rgba(16, 185, 129, 0.16)"
-                    : "rgba(13, 148, 136, 0.14)",
-                  boxShadow: isDark
-                    ? "0 0 30px rgba(16, 185, 129, 0.4), inset 0 0 20px rgba(16, 185, 129, 0.2)"
-                    : "0 0 25px rgba(13, 148, 136, 0.25), inset 0 0 15px rgba(13, 148, 136, 0.1)",
+                  transform: `rotateY(${tilt.x}deg) rotateX(${tilt.y}deg)`,
+                  transformStyle: "preserve-3d",
                 }}
               >
-                {/* Left Floor Identifier Pin */}
+                {/* Background CAD Isometric Grid */}
                 <div
-                  className={`-ml-5 px-2.5 py-0.5 rounded-md text-[10px] font-bold font-mono shadow-md border ${
-                    isDark
-                      ? "bg-emerald-500 text-slate-950 border-emerald-300"
-                      : "bg-emerald-600 text-white border-emerald-500"
-                  }`}
-                >
-                  {current.tagBadge}
-                </div>
-
-                {/* Right Status Badge */}
-                <div
-                  className={`-mr-5 px-2 py-0.5 rounded-md text-[10px] font-mono shadow-md border hidden sm:block ${
-                    isDark
-                      ? "bg-[#09121b] text-emerald-300 border-emerald-500/40"
-                      : "bg-white text-emerald-800 border-emerald-300"
-                  }`}
-                >
-                  {current.metric1Value} | {current.metric2Value}
-                </div>
-              </div>
-
-              {/* Interactive Service Click Zones over the 3D model */}
-              {pillars.map((p) => (
-                <button
-                  key={p.id}
-                  onClick={() => setSelectedPillar(p.id)}
-                  aria-label={p.titleUz}
-                  className="absolute left-[15%] right-[15%] cursor-pointer z-10 transition-colors rounded-lg group/zone hover:bg-emerald-500/10 focus:outline-none"
+                  className="absolute inset-0 pointer-events-none opacity-25"
                   style={{
-                    top: `${p.yPercent}%`,
-                    height: `${p.hPercent}%`,
+                    backgroundImage: "radial-gradient(circle at center, rgba(16, 185, 129, 0.12) 0%, transparent 70%), linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px)",
+                    backgroundSize: "100% 100%, 32px 32px, 32px 32px",
+                  }}
+                />
+                <img
+                  src="/images/hero_building_transparent.webp"
+                  alt="MBFB 3D Digital Twin"
+                  className="max-h-[340px] sm:max-h-[370px] w-auto object-contain transition-all duration-500 select-none filter drop-shadow-[0_20px_40px_rgba(16,185,129,0.25)]"
+                  draggable={false}
+                />
+                {/* Holographic Active Floor Highlight Bracket */}
+                <div
+                  className="absolute left-[18%] right-[18%] transition-all duration-500 pointer-events-none rounded-xl border-2 flex items-center justify-between px-3"
+                  style={{
+                    top: `${current.yPercent}%`,
+                    height: `${current.hPercent}%`,
+                    borderColor: "#00c988",
+                    backgroundColor: "rgba(0, 201, 136, 0.18)",
+                    boxShadow: "0 0 30px rgba(0, 201, 136, 0.4), inset 0 0 20px rgba(0, 201, 136, 0.2)",
                   }}
                 >
-                  <span className="sr-only">{p.titleUz}</span>
-                </button>
-              ))}
-            </div>
-
-            {/* Bottom Platform Label */}
-            <div className="absolute bottom-3 text-center w-full pointer-events-none">
-              <span
-                className={`text-[11px] font-mono tracking-wider uppercase px-3 py-1 rounded-full border ${
-                  isDark
-                    ? "bg-[#060d15]/80 text-slate-400 border-white/10"
-                    : "bg-white/80 text-slate-500 border-slate-200"
-                }`}
-              >
-                MBFB • Ma&apos;muriy binolarga kundalik g&apos;amxo&apos;rlik boshqarmasi
-              </span>
-            </div>
+                  <div className="px-2.5 py-0.5 rounded-md text-[10px] font-bold font-mono shadow-md border bg-[#00c988] text-slate-950 border-emerald-300">
+                    {current.tagBadge}
+                  </div>
+                  <div className="px-2 py-0.5 rounded-md text-[10px] font-mono shadow-md border hidden sm:block bg-[#09121b] text-emerald-300 border-emerald-500/40">
+                    {current.metric1Value} | {current.metric2Value}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Right Column: 4 Core Pillars & Live Operational Diagnostics */}
@@ -379,42 +358,47 @@ export default function InteractiveBuildingViewer() {
                   <button
                     key={p.id}
                     onClick={() => setSelectedPillar(p.id)}
-                    className={`p-3.5 rounded-2xl border text-left transition-all duration-200 ${
+                    className={`p-2.5 sm:p-3 rounded-2xl border text-left transition-all duration-200 flex items-center gap-2.5 ${
                       isActive
-                        ? isDark
-                          ? "bg-gradient-to-r from-[#0f766e] to-[#115e59] border-emerald-400 text-white shadow-lg shadow-emerald-950/60 scale-[1.02]"
-                          : "bg-gradient-to-r from-emerald-600 to-teal-700 border-transparent text-white shadow-lg shadow-emerald-700/25 scale-[1.02]"
+                        ? "bg-[#00c988] border-transparent text-white shadow-lg shadow-[#00c988]/30 scale-[1.02]"
                         : isDark
-                        ? "bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:border-emerald-500/30"
+                        ? "bg-[#0e1726]/90 border-white/10 text-slate-300 hover:bg-white/10 hover:border-emerald-500/30"
                         : "bg-white border-slate-200 text-slate-700 hover:bg-emerald-50/60 hover:border-emerald-300 shadow-sm"
                     }`}
                   >
-                    <div className="flex items-center justify-between">
-                      <span
-                        className={`text-[11px] font-bold uppercase tracking-wider ${
+                    <img
+                      src={p.image}
+                      alt={p.badgeUz}
+                      className="w-10 h-10 rounded-xl object-cover shrink-0 shadow-sm border border-white/20"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between">
+                        <span
+                          className={`text-[11px] font-bold uppercase tracking-wider truncate ${
+                            isActive
+                              ? "text-white"
+                              : isDark
+                              ? "text-[#00c988]"
+                              : "text-emerald-700"
+                          }`}
+                        >
+                          {lang === "uz" ? p.badgeUz : p.badgeRu}
+                        </span>
+                        {isActive && (
+                          <span className="w-2 h-2 rounded-full bg-white animate-ping shrink-0 ml-1"></span>
+                        )}
+                      </div>
+                      <div
+                        className={`text-xs font-semibold mt-0.5 truncate ${
                           isActive
-                            ? "text-emerald-100"
+                            ? "text-white/90"
                             : isDark
-                            ? "text-emerald-400"
-                            : "text-emerald-700"
+                            ? "text-slate-200"
+                            : "text-slate-800"
                         }`}
                       >
-                        {lang === "uz" ? p.badgeUz : p.badgeRu}
-                      </span>
-                      {isActive && (
-                        <span className="w-2 h-2 rounded-full bg-white animate-ping"></span>
-                      )}
-                    </div>
-                    <div
-                      className={`text-xs font-semibold mt-1 line-clamp-1 ${
-                        isActive
-                          ? "text-white"
-                          : isDark
-                          ? "text-slate-200"
-                          : "text-slate-800"
-                      }`}
-                    >
-                      {lang === "uz" ? p.titleUz.split(":")[1]?.trim() || p.titleUz : p.titleRu.split(":")[1]?.trim() || p.titleRu}
+                        {lang === "uz" ? p.titleUz.split(":")[1]?.trim() || p.titleUz : p.titleRu.split(":")[1]?.trim() || p.titleRu}
+                      </div>
                     </div>
                   </button>
                 );

@@ -133,12 +133,13 @@ export default function Home() {
                 }`}>
                   <div className="relative w-full aspect-[16/11] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 flex items-center justify-center">
                     <img
-                      src="/images/admin_building_hero.webp"
-                      alt="MBFB Bosh Binosi"
+                      src="/images/mbfb_navoiy30_headquarters.webp"
+                      alt="MBFB Bosh Binosi — Toshkent, Navoiy 30"
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
-                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-slate-900/80 text-white backdrop-blur-md border border-white/15 shadow-sm">
-                      {lang === "uz" ? "Toshkent, Navoiy 30" : "Ташкент, Навои 30"}
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-slate-900/80 text-white backdrop-blur-md border border-white/15 shadow-sm flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                      <span>{lang === "uz" ? "Toshkent, Navoiy 30" : "Ташкент, Навои 30"}</span>
                     </div>
                   </div>
 
