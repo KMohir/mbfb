@@ -215,12 +215,17 @@ export default function Home() {
             
             {/* Card 1: Binolarni saqlash */}
             <Card3DTilt>
-              <div className={`rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col h-full ${
-                isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40"
+              <div className={`rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col h-full group ${
+                isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40 hover:shadow-md"
               }`}>
-                <div className={`aspect-[16/11] overflow-hidden relative flex items-center justify-center ${isDark ? "bg-slate-900/60" : "bg-slate-100/60"}`}>
-                  <img src="/images/3d_smart_building.webp" alt="Binolarni saqlash" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
-                  <span className="absolute top-3 left-3 bg-[#0f766e] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">01</span>
+                <div className="aspect-[16/10] overflow-hidden relative">
+                  <img
+                    src="/images/mbfb_task_1_building.webp"
+                    alt="Binolarni saqlash"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40" />
+                  <span className="absolute top-3 left-3 bg-[#00c988] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">01</span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
@@ -231,7 +236,7 @@ export default function Home() {
                     isDark ? "border-white/10 text-slate-400" : "border-slate-100 text-slate-500"
                   }`}>
                     <span>{t("task1_scope")}</span>
-                    <span className="text-[#0f766e] font-bold">MBFB</span>
+                    <span className="text-[#00c988] font-bold">MBFB</span>
                   </div>
                 </div>
               </div>
@@ -239,12 +244,17 @@ export default function Home() {
 
             {/* Card 2: Ta'mirlash ishlari */}
             <Card3DTilt>
-              <div className={`rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col h-full ${
-                isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40"
+              <div className={`rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col h-full group ${
+                isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40 hover:shadow-md"
               }`}>
-                <div className={`aspect-[16/11] overflow-hidden relative flex items-center justify-center ${isDark ? "bg-slate-900/60" : "bg-slate-100/60"}`}>
-                  <img src="/images/3d_renovation_tools.webp" alt="Ta'mirlash ishlari" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
-                  <span className="absolute top-3 left-3 bg-[#0f766e] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">02</span>
+                <div className="aspect-[16/10] overflow-hidden relative">
+                  <img
+                    src="/images/mbfb_task_2_renovation.webp"
+                    alt="Ta'mirlash ishlari"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40" />
+                  <span className="absolute top-3 left-3 bg-[#00c988] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">02</span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
@@ -255,7 +265,7 @@ export default function Home() {
                     isDark ? "border-white/10 text-slate-400" : "border-slate-100 text-slate-500"
                   }`}>
                     <span>{t("task2_scope")}</span>
-                    <span className="text-[#0f766e] font-bold">MBFB</span>
+                    <span className="text-[#00c988] font-bold">MBFB</span>
                   </div>
                 </div>
               </div>
@@ -263,12 +273,17 @@ export default function Home() {
 
             {/* Card 3: Muhandislik tarmoqlari */}
             <Card3DTilt>
-              <div className={`rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col h-full ${
-                isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40"
+              <div className={`rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col h-full group ${
+                isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40 hover:shadow-md"
               }`}>
-                <div className={`aspect-[16/11] overflow-hidden relative flex items-center justify-center ${isDark ? "bg-slate-900/60" : "bg-slate-100/60"}`}>
-                  <img src="/images/3d_hvac_turbine.webp" alt="Muhandislik tarmoqlari" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
-                  <span className="absolute top-3 left-3 bg-[#0f766e] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">03</span>
+                <div className="aspect-[16/10] overflow-hidden relative">
+                  <img
+                    src="/images/mbfb_task_3_engineering.webp"
+                    alt="Muhandislik tarmoqlari"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40" />
+                  <span className="absolute top-3 left-3 bg-[#00c988] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">03</span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
@@ -279,7 +294,7 @@ export default function Home() {
                     isDark ? "border-white/10 text-slate-400" : "border-slate-100 text-slate-500"
                   }`}>
                     <span>{t("task3_scope")}</span>
-                    <span className="text-[#0f766e] font-bold">MBFB</span>
+                    <span className="text-[#00c988] font-bold">MBFB</span>
                   </div>
                 </div>
               </div>
@@ -287,12 +302,17 @@ export default function Home() {
 
             {/* Card 4: Kommunal xizmatlar va xavfsizlik */}
             <Card3DTilt>
-              <div className={`rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col h-full ${
-                isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40"
+              <div className={`rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col h-full group ${
+                isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40 hover:shadow-md"
               }`}>
-                <div className={`aspect-[16/11] overflow-hidden relative flex items-center justify-center ${isDark ? "bg-slate-900/60" : "bg-slate-100/60"}`}>
-                  <img src="/images/3d_security_shield.webp" alt="Kommunal xizmatlar va xavfsizlik" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
-                  <span className="absolute top-3 left-3 bg-[#0f766e] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">04</span>
+                <div className="aspect-[16/10] overflow-hidden relative">
+                  <img
+                    src="/images/mbfb_task_4_security.webp"
+                    alt="Kommunal xizmatlar va xavfsizlik"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40" />
+                  <span className="absolute top-3 left-3 bg-[#00c988] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">04</span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
@@ -303,7 +323,7 @@ export default function Home() {
                     isDark ? "border-white/10 text-slate-400" : "border-slate-100 text-slate-500"
                   }`}>
                     <span>{t("task4_scope")}</span>
-                    <span className="text-[#0f766e] font-bold">MBFB</span>
+                    <span className="text-[#00c988] font-bold">MBFB</span>
                   </div>
                 </div>
               </div>
@@ -311,12 +331,17 @@ export default function Home() {
 
             {/* Card 5: Xonalarni ijaraga berish */}
             <Card3DTilt>
-              <div className={`rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col h-full ${
-                isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40"
+              <div className={`rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col h-full group ${
+                isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40 hover:shadow-md"
               }`}>
-                <div className={`aspect-[16/11] overflow-hidden relative flex items-center justify-center ${isDark ? "bg-slate-900/60" : "bg-slate-100/60"}`}>
-                  <img src="/images/3d_executive_chair.webp" alt="Xonalarni ijaraga berish" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
-                  <span className="absolute top-3 left-3 bg-[#0f766e] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">05</span>
+                <div className="aspect-[16/10] overflow-hidden relative">
+                  <img
+                    src="/images/mbfb_task_5_lease.webp"
+                    alt="Xonalarni ijaraga berish"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40" />
+                  <span className="absolute top-3 left-3 bg-[#00c988] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">05</span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
@@ -327,7 +352,7 @@ export default function Home() {
                     isDark ? "border-white/10 text-slate-400" : "border-slate-100 text-slate-500"
                   }`}>
                     <span>{t("task5_scope")}</span>
-                    <span className="text-[#0f766e] font-bold">MBFB</span>
+                    <span className="text-[#00c988] font-bold">MBFB</span>
                   </div>
                 </div>
               </div>
@@ -335,12 +360,17 @@ export default function Home() {
 
             {/* Card 6: Davlat mulkidan foydalanish */}
             <Card3DTilt>
-              <div className={`rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col h-full ${
-                isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40"
+              <div className={`rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col h-full group ${
+                isDark ? "bg-[#0e1726]/90 backdrop-blur-md border-white/10 text-white shadow-xl hover:border-emerald-500/40" : "bg-white/95 backdrop-blur-md border-slate-200 text-slate-900 shadow-sm hover:border-emerald-500/40 hover:shadow-md"
               }`}>
-                <div className={`aspect-[16/11] overflow-hidden relative flex items-center justify-center ${isDark ? "bg-slate-900/60" : "bg-slate-100/60"}`}>
-                  <img src="/images/3d_vault_cube.webp" alt="Davlat mulkidan foydalanish" className="img-hover w-full h-full object-contain p-4 transition-transform duration-500 drop-shadow-lg" />
-                  <span className="absolute top-3 left-3 bg-[#0f766e] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">06</span>
+                <div className="aspect-[16/10] overflow-hidden relative">
+                  <img
+                    src="/images/mbfb_task_6_state_assets.webp"
+                    alt="Davlat mulkidan foydalanish"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40" />
+                  <span className="absolute top-3 left-3 bg-[#00c988] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-sm">06</span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
@@ -351,7 +381,7 @@ export default function Home() {
                     isDark ? "border-white/10 text-slate-400" : "border-slate-100 text-slate-500"
                   }`}>
                     <span>{t("task6_scope")}</span>
-                    <span className="text-[#0f766e] font-bold">MBFB</span>
+                    <span className="text-[#00c988] font-bold">MBFB</span>
                   </div>
                 </div>
               </div>
